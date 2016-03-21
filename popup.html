@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang = "ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="popup.css"/>
+	<link rel="script" href="popup.js"/>
+</head>
+<script>
+	alert("x")
+</script>
+<body>
+	<script type="text/javascript" src="popup.js"></script>
+	<div id="pop">
+	<div id ="tabs">
+		<li><a href="#feed">manage your feeds</a></li>
+		<li><a href="#netvibes">manage your bives account</a></li>
+	</div>
+	<!--for feed management-->
+	<div id="feed">
+		<div id = "state"> 
+			<div id="current" onload="gotdate()">no export ever.</div>
+			<select id="term" onload="createGraph()">
+				<option value="7">過去７日間</option>
+				<option value="14">過去１４日間</option>
+				<option value="30">過去３０日間</option>
+				<option value="180">過去１８０日間</option>
+			</select>
+		</div>
+		<div id ="graph" onload="createGraph()">
+			<!--place for graph-->
+			<table class="graph">
+				<tr>
+					<td><p style="position:absolute; rotate">feed登録数<p></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+			</table>
+			<div style="float:left;"><p id="quote" style="font-size:13px; border-bottom:solid 10px #ffc700;">Quote: You wanna fly, you got to give up the shit that weighs you down.</p></div>
+			<button class="export" style="float:right;">export feeds</button>
+		</div>
+	</div>
+	<!--for vibes account-->
+	<div id="netvibes" >
+		<div class="list" onload="accountList()"></div>
+		<button id="alignment">alignment for feeds</button>
+	</div>
+	</div>
+</body>
+</html>

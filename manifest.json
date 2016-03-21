@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	"name": "opml exporter",
+	"version": "1.00",
+	"description": "make your rss life better",
+	"permissions":[
+		"activeTab",
+		"bookmarks"
+	],
+
+	"browser_action":{
+		"default_icon":{
+			"19": "image/image32.png"
+		},
+		"default_title": "export opml",
+		"default_popup": "popup.html"
+	},
+
+	"icons":{
+		"16": "image/image16.png",
+		"32": "image/image32.png",
+		"64": "image/image64.png"
+	},
+
+	"background":{
+		"scripts":["background.js"],
+		"persistant":false
+	}
+}

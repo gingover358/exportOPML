@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>option page</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="option.css"/>
+		<script type="text/javascript", src=option.js></script>
+	</head>
+	<body>
+		<h1>setting</h1>
+			<div id="tabs">
+				<ul>
+					<li class="01"><a href=#rss>For rss</a></li>
+					<li class="02"><a href="#vibes">For netvibes</a></li>
+				</ul>
+			</div>
+			<div id="rss">
+				<h2>list of all registered rss format.</h2>
+				<div class="rss">
+				</div>
+				<h2>register new site to your extension</h2>
+				<div class="register">
+				<textarea></textarea>
+				<textarea></textarea>
+				<textarea></textarea>
+				<button onclick="addbox()">add parameter</button>
+				<button onclick="register()">register this site</button>
+				</div>
+			</div>
+			<div id="vibes">
+				<h2>list of all your vibes account for rss.</h2>
+				<div class="vibes">
+					<table>
+						<th>
+							<td>for use</td>
+							<td>your id</td>
+							<td>password</td>
+						</th>
+					</table>
+				</div>
+				<h2>register new account to your extension</h2>
+				<div class="register">
+					<table>
+						<tr>
+							<td="id">for use
+								<textarea></textarea>
+							</td>
+							<td id="id">your id
+								<textarea></textarea>
+							</td>
+							<td id="password">password
+								<textarea></textarea>
+							</td>
+						</tr>
+					</table>
+				<button onclick="register()"></button>
+				</div>
+			</div>
+	</body>
+</html>
