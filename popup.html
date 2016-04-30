@@ -5,32 +5,31 @@
 	<link rel="stylesheet" type="text/css" href="popup.css"/>
 	<link rel="script" href="popup.js"/>
 </head>
-<script>
-	alert("x")
-</script>
 <body>
-	<script type="text/javascript" src="popup.js"></script>
-	<div id="pop">
+	<script type="text/javascript" src="popup.js">
+	</script>
 	<div id ="tabs">
-		<li><a href="#feed">manage your feeds</a></li>
-		<li><a href="#netvibes">manage your bives account</a></li>
+		<li><a href="#feed">Manage your feeds</a></li>
+		<li><a href="#netvibes">Details of feeds</a></li>
 	</div>
 	<!--for feed management-->
+	<div id="wrapper">
 	<div id="feed">
 		<div id = "state"> 
-			<div id="current" onload="gotdate()">no export ever.</div>
-			<select id="term" onload="createGraph()">
+			<div id="current">no export ever.</div>
+			<select id="term">
 				<option value="7">過去７日間</option>
 				<option value="14">過去１４日間</option>
-				<option value="30">過去３０日間</option>
-				<option value="180">過去１８０日間</option>
+				<option value="28">過去１ヶ月</option>
+				<option value="56">過去２ヶ月</option>
 			</select>
 		</div>
-		<div id ="graph" onload="createGraph()">
+		<div id ="graph">
 			<!--place for graph-->
 			<table class="graph">
+			<tbody>
 				<tr>
-					<td><p style="position:absolute; rotate">feed登録数<p></td>
+					<td><p class="gy">Feed</p></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -38,8 +37,10 @@
 					<td></td>
 					<td></td>
 					<td></td>
+					<td><p></p></td>
 				</tr>
 				<tr>
+					<td><p class="gy" style="top:90px;">50</p></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -47,9 +48,10 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><p></p></td>
 				</tr>
 				<tr>
+					<td><p class="gy" style="top:140px">40</p></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -57,9 +59,10 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><p></p></td>
 				</tr>
 				<tr>
+					<td><p class="gy" style="top:190px">30</p></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -67,9 +70,10 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><p></p></td>
 				</tr>
 				<tr>
+					<td><p class="gy" style="top:240px;">20</p></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -77,39 +81,63 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><p></p></td>
 				</tr>
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td><p class="gx" style="right:82px">0</p><p class="gy" style="top:290px;">10</p><p class="line"></p><p class="dot" style="left:82px"></p></td>
+					<td><p class="gx" style="right:146px;">1</p><p class="line"></p><p class="dot" style="top:326px;left:146px;"></p></td>
+					<td><p class="gx" style="right:210px;">2</p><p class="line"></p><p class="dot" style="left:210px;"></p></td>
+					<td><p class="gx" style="right:274px">3</p><p class="line"></p><p class="dot" style="left:274px;"></p></td>
+					<td><p class="gx" style="right:338px;">4</p><p class="line"></p><p class="dot" style="left:338px;"></p></td>
+					<td><p class="gx" style="right:402px;">5</p><p class="line"></p><p class="dot" style="left:402px;"></p></td>
+					<td><p class="gx" style="right:466px">6</p><p class="line"></p><p class="dot" style="left:466px"></p></td>
+					<td><p class="gx" style="right:530px">7</p><p class="line" style="width:100px;"></p><p class="dot" style="left:530px;"></p></td>
+					<td><p class="gx" style="right:594px">8</p><p class="x-unit">ago(days)</p><p class="dot" style="left:18px;"></p></td></td>
 				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-
+			</tbody>
 			</table>
-			<div style="float:left;"><p id="quote" style="font-size:13px; border-bottom:solid 10px #ffc700;">Quote: You wanna fly, you got to give up the shit that weighs you down.</p></div>
-			<button class="export" style="float:right;">export feeds</button>
+			<div style="float:left;"><p id="quote">Quote: You wanna fly, you got to give up the shit that weighs you down.</p></div>
+			<button id="export" class="export" style="float:right;">export feeds</button>
 		</div>
 	</div>
 	<!--for vibes account-->
-	<div id="netvibes" >
-		<div class="list" onload="accountList()"></div>
-		<button id="alignment">alignment for feeds</button>
-	</div>
-	</div>
+	<div id="netvibes">
+		<div>
+			<div class="list">
+			<table class="graph" style="width:100%; height:100%;">
+				<tr>
+					<td class="title"><p>Registered Site</p></td>
+					<td class="title"><p>Cutback</p></td>
+					<td class="title"><p>Feed type</p></td>
+					<td class="title"><p>The number of registerd</p></td>
+				</tr>
+				<tr>
+					<td class="use">netshop</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="use">auction</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="use">mall</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="use">Auction seller</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			</div>
+		</div>
+</div>
 </body>
 </html>

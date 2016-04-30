@@ -15,7 +15,7 @@ body{
 }
 li{
 	display:inline;
-	border-bottom: solid #00d865;
+	border-bottom: solid #00eda2;
 	border-bottom-width: 3px;
 }
 
@@ -27,6 +27,7 @@ li a {
 	position:absolute;
 	width:100%;
 	height:20px;
+	z-index:6;
 }
 
 .class{
@@ -35,98 +36,190 @@ li a {
 }
 
 #netvibes{
-	width:100%;
-	height:100%;
-	margin-top: 25px;
+	width:98%;
+	height:93%;
 	position:absolute;
-	background:black;
+	margin-top:20px;
 	z-index:1;
 	opacity:0;
 }
 
+/*wrapper for #feed and #netvibes*/
+#wrapper{
+}
 
 /*setting feed tab content*/
 #feed{
 	width:100%;
 	height:100%;
+	padding-left: 2px;
 	position:absolute;
-	margin-top: 25px;
-	background-color:#fff;
 	opacity:1;
 	z-index:2;
 }
 
 #state{
-	width:95%;
-	height:100%;
+	width:93%;
+	height:5%;
+	margin-top:20px;
 }
 
 #current{
 	float:left;
+	margin-left:20px;
+	display:inline;
 }
 #term{
 	float:right;
+	margin-right:20px;
+	display:inline;
 }
 
 #graph{
+	width:577px;
+	height:301px;
+	margin-left:5px;
+}
+
+/*setting netvibes account list*/
+.list{
 	width:100%;
-	height:100%;
+	height:370px;
 }
 
 /*for tageted*/
 #netvibes:target{
-	z-index:3;
+	background-color: #fff;
+	z-index:5;
 	opacity:1;
-}
-
-#feed:not(:target){
-	opacity:0;
 }
 
 /*button design*/
 button {
-	background-color: #00eda2;
+	background-color: green;
 	border:#fff;
 	width:100px;
 	height:32px;
-	float:right;
-	margin-right:20px;
-	position:absolute;
+	color:#fff;
+	border:solid 1px #007c5f;
 }
 
 button:hover{
-	float:left;
 	opacity: 0.8;
 	border-width: 100%;
-	border-bottom: 2px solid #007c5f;
-	border-top:1px dotted #007c5f;
+	border:solid 1px #00e6e6;
 }
 
 /*button for export opml*/
 .export{
+	background-color: green;
+	border:solid 1px #fff;
+	width:100px;
+	height:32px;
 	float:right;
+	margin-right: 30px;
 	margin-top:10px;
-	margin-left:20px;
+}
+
+/*button for alignment*/
+.center{
+	text-align: center;
 }
 
 /*graph design*/
 .graph{
-	width:595px;
-	height:300px;
+	width:577px;
+	height:301px;
+	margin-left:15px;
+	margin-bottom:12px;
 	border-collapse: collapse;
-	border:1px solid #007c5f;
-	margin-top: :10px;
 }
 
-tr{
-	
+#netvibes .graph{
+	margin-left:0px;
+	margin-top:10px;
 }
 
 td{
 	border:1px solid #e6eced;
 }
 
-/*dot for graph*/
-td:before{
+tbody{
+	width:100%;
+	height:100%;
+}
 
+/*vertical writing for gy*/
+
+.gy{
+	position:absolute;
+	top:40px;
+	left:-12px;
+	writing-mode: tb-rl; /* IE独自仕様 */
+	writing-mode: vertical-rl;
+	-moz-writing-mode: vertical-rl;
+	-o-writing-mode: vertical-rl;
+	-webkit-writing-mode: vertical-rl;
+	-webkit-writing-mode: vertical-rl;
+	border-left:solid 1px #007c5f;
+}
+
+.gx{
+	position:absolute;
+	bottom:45px;
+	border-bottom:solid 1px #007c5f;
+}
+
+.x-unit{
+	position:absolute;
+	bottom:45px;
+	right:15px;
+	border-bottom:solid 1px #007c5f;
+}
+
+
+/* dot design for graph*/
+
+.dot{
+	content:"";
+	background-color: #007c5f;
+	position:absolute;
+	z-index:3;
+	top:26px;
+	left:20px;
+	width:5px;
+	height:5px;
+	border:solid 1px #008080;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+	/*using with mouseover event in javascript*/
+	.reserve{
+		position:absolute;
+		z-index:4;
+		width:12px;
+		height:12px;
+	}
+	.detail{
+		font-size:30px;
+		border:solid 1px #e6eced;
+		background-color: #fff;
+	}
+
+/*line desing for graph*/
+
+.line{
+	content:"";
+	position:absolute;
+	top:26px;
+	border-bottom:solid 1px green;
+	width:100px;
+	height:0px;
+}
+
+/*quote*/
+#quote{
+	font-size:13px; 
+	border-bottom:solid 10px #00eda2;
 }

@@ -5,7 +5,8 @@
 	"description": "make your rss life better",
 	"permissions":[
 		"activeTab",
-		"bookmarks"
+		"bookmarks",
+		"storage"
 	],
 
 	"browser_action":{
@@ -25,5 +26,6 @@
 	"background":{
 		"scripts":["background.js"],
 		"persistant":false
-	}
+	},
+	"options_page":"option.html"
 }
